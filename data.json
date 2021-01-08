@@ -2,9 +2,139 @@
   "versions": {
     "chromium-87": {
       "IMAGE": "ubuntu:18.04",
-      "CHROMIUM_VERSION": "507633598/chromium-browser_87.0.4280.66-0ubuntu0.18.04.1_amd64.deb",
-      "CHROMEDRIVER_VERSION": "87.0.4280.88",
-      "userAgent": "87.0.4280.66 (Official Build) Built on Ubuntu , running on Ubuntu 18.04 (64-bit)"
+      "CHROMIUM_VERSION": "507633598/chromium-browser_87.0.4280.66-0ubuntu0.18.04.1_amd64",
+      "CHROMIUM_CODECS_VERSION": "507633600/chromium-codecs-ffmpeg-extra_87.0.4280.66-0ubuntu0.18.04.1_amd64",
+      "CHROMEDRIVER_VERSION": "87.0.4280.20",
+      "userAgent": "",
+      "template": "chromium-87"
+    },
+    "chromium-86": {
+      "IMAGE": "ubuntu:18.04",
+      "CHROMIUM_VERSION": "506675400/chromium-browser_86.0.4240.198-0ubuntu0.18.04.1_amd64",
+      "CHROMIUM_CODECS_VERSION": "506675402/chromium-codecs-ffmpeg-extra_86.0.4240.198-0ubuntu0.18.04.1_amd64",
+      "CHROMEDRIVER_VERSION": "86.0.4240.22",
+      "userAgent": "",
+      "template": "chromium-87"
+    },
+    "chromium-85": {
+      "IMAGE": "ubuntu:18.04",
+      "CHROMIUM_VERSION": "498624695/chromium-browser_85.0.4183.121-0ubuntu0.18.04.1_amd64",
+      "CHROMIUM_CODECS_VERSION": "498624704/chromium-codecs-ffmpeg-extra_85.0.4183.121-0ubuntu0.18.04.1_amd64",
+      "CHROMEDRIVER_VERSION": "85.0.4183.38",
+      "userAgent": "",
+      "template": "chromium-87"
+    },
+    "chromium-84": {
+      "IMAGE": "ubuntu:18.04",
+      "CHROMIUM_VERSION": "490763366/chromium-browser_84.0.4147.105-0ubuntu0.18.04.1_amd64",
+      "CHROMIUM_CODECS_VERSION": "490763368/chromium-codecs-ffmpeg-extra_84.0.4147.105-0ubuntu0.18.04.1_amd64",
+      "CHROMEDRIVER_VERSION": "84.0.4147.30",
+      "userAgent": "",
+      "template": "chromium-87"
+    },
+    "chromium-83": {
+      "IMAGE": "ubuntu:18.04",
+      "CHROMIUM_VERSION": "480826523/chromium-browser_83.0.4103.61-0ubuntu0.18.04.1_amd64",
+      "CHROMIUM_CODECS_VERSION": "480826529/chromium-codecs-ffmpeg-extra_83.0.4103.61-0ubuntu0.18.04.1_amd64",
+      "CHROMEDRIVER_VERSION": "83.0.4103.14",
+      "userAgent": "",
+      "template": "chromium-87"
+    },
+    "chromium-81": {
+      "IMAGE": "ubuntu:18.04",
+      "CHROMIUM_VERSION": "478575930/chromium-browser_81.0.4044.138-0ubuntu0.18.04.1_amd64",
+      "CHROMIUM_CODECS_VERSION": "478575934/chromium-codecs-ffmpeg-extra_81.0.4044.138-0ubuntu0.18.04.1_amd64",
+      "CHROMEDRIVER_VERSION": "81.0.4044.138",
+      "userAgent": "",
+      "template": "chromium-87"
+    },
+    "chromium-80": {
+      "IMAGE": "ubuntu:18.04",
+      "CHROMIUM_VERSION": "472953521/chromium-browser_80.0.3987.163-0ubuntu0.18.04.1_amd64",
+      "CHROMIUM_CODECS_VERSION": "472953524/chromium-codecs-ffmpeg-extra_80.0.3987.163-0ubuntu0.18.04.1_amd64",
+      "CHROMEDRIVER_VERSION": "80.0.3987.106",
+      "userAgent": "",
+      "template": "chromium-87"
+    },
+    "chromium-79": {
+      "IMAGE": "ubuntu:18.04",
+      "CHROMIUM_VERSION": "462455281/chromium-browser_79.0.3945.130-0ubuntu0.18.04.1_amd64",
+      "CHROMIUM_CODECS_VERSION": "462455283/chromium-codecs-ffmpeg-extra_79.0.3945.130-0ubuntu0.18.04.1_amd64",
+      "CHROMEDRIVER_VERSION": "79.0.3945.16",
+      "userAgent": "",
+      "template": "chromium-87"
+    },
+    "chromium-78": {
+      "IMAGE": "ubuntu:18.04",
+      "CHROMIUM_VERSION": "452243842/chromium-browser_78.0.3904.108-0ubuntu0.18.04.1_amd64",
+      "CHROMIUM_CODECS_VERSION": "452243844/chromium-codecs-ffmpeg-extra_78.0.3904.108-0ubuntu0.18.04.1_amd64",
+      "CHROMEDRIVER_VERSION": "78.0.3904.105",
+      "userAgent": "",
+      "template": "chromium-87"
+    },
+    "chromium-77": {
+      "IMAGE": "ubuntu:18.04",
+      "CHROMIUM_VERSION": "443497966/chromium-browser_77.0.3865.90-0ubuntu0.18.04.1_amd64",
+      "CHROMIUM_CODECS_VERSION": "443497976/chromium-codecs-ffmpeg-extra_77.0.3865.90-0ubuntu0.18.04.1_amd64",
+      "CHROMEDRIVER_VERSION": "77.0.3865.10",
+      "userAgent": "",
+      "template": "chromium-87"
+    },
+    "chromium-76": {
+      "IMAGE": "ubuntu:18.04",
+      "CHROMIUM_VERSION": "436832461/chromium-browser_76.0.3809.100-0ubuntu0.18.04.1_amd64",
+      "CHROMIUM_CODECS_VERSION": "436832466/chromium-codecs-ffmpeg-extra_76.0.3809.100-0ubuntu0.18.04.1_amd64",
+      "CHROMEDRIVER_VERSION": "76.0.3809.12",
+      "userAgent": "",
+      "template": "chromium-87"
+    },
+    "chromium-75": {
+      "IMAGE": "ubuntu:18.04",
+      "CHROMIUM_VERSION": "433412056/chromium-browser_75.0.3770.142-0ubuntu0.18.04.1_amd64",
+      "CHROMIUM_CODECS_VERSION": "433412065/chromium-codecs-ffmpeg-extra_75.0.3770.142-0ubuntu0.18.04.1_amd64",
+      "CHROMEDRIVER_VERSION": "75.0.3770.140",
+      "userAgent": "",
+      "template": "chromium-87"
+    },
+    "chromium-74": {
+      "IMAGE": "ubuntu:18.04",
+      "CHROMIUM_VERSION": "424897539/chromium-browser_74.0.3729.169-0ubuntu0.18.04.1_amd64",
+      "CHROMIUM_CODECS_VERSION": "424897541/chromium-codecs-ffmpeg-extra_74.0.3729.169-0ubuntu0.18.04.1_amd64",
+      "CHROMEDRIVER_VERSION": "74.0.3729.6",
+      "userAgent": "",
+      "template": "chromium-87"
+    },
+    "chromium-73": {
+      "IMAGE": "ubuntu:18.04",
+      "CHROMIUM_VERSION": "416074803/chromium-browser_73.0.3683.86-0ubuntu0.18.04.1_amd64",
+      "CHROMIUM_CODECS_VERSION": "416074805/chromium-codecs-ffmpeg-extra_73.0.3683.86-0ubuntu0.18.04.1_amd64",
+      "CHROMEDRIVER_VERSION": "73.0.3683.20",
+      "userAgent": "",
+      "template": "chromium-87"
+    },
+    "chromium-72": {
+      "IMAGE": "ubuntu:18.04",
+      "CHROMIUM_VERSION": "413871155/chromium-browser_72.0.3626.121-0ubuntu0.18.04.1_amd64",
+      "CHROMIUM_CODECS_VERSION": "413871157/chromium-codecs-ffmpeg-extra_72.0.3626.121-0ubuntu0.18.04.1_amd64",
+      "CHROMEDRIVER_VERSION": "72.0.3626.69",
+      "userAgent": "",
+      "template": "chromium-87"
+    },
+    "chromium-71": {
+      "IMAGE": "ubuntu:18.04",
+      "CHROMIUM_VERSION": "401433234/chromium-browser_71.0.3578.98-0ubuntu0.18.04.1_amd64",
+      "CHROMIUM_CODECS_VERSION": "401433239/chromium-codecs-ffmpeg-extra_71.0.3578.98-0ubuntu0.18.04.1_amd64",
+      "CHROMEDRIVER_VERSION": "71.0.3578.137",
+      "userAgent": "",
+      "template": "chromium-87"
+    },
+    "chromium-70": {
+      "IMAGE": "ubuntu:18.04",
+      "CHROMIUM_VERSION": "398558552/chromium-browser_70.0.3538.110-0ubuntu0.18.04.1_amd64",
+      "CHROMIUM_CODECS_VERSION": "398558556/chromium-codecs-ffmpeg-extra_70.0.3538.110-0ubuntu0.18.04.1_amd64",
+      "CHROMEDRIVER_VERSION": "70.0.3538.16",
+      "userAgent": "",
+      "template": "chromium-87"
     }
   }
 }

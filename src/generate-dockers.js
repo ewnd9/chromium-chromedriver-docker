@@ -32,6 +32,10 @@ async function main() {
       `docker/${version}/Dockerfile`,
       dockerfile
         .replace(
+          /IMAGE=ubuntu:[\d:.]+/,
+          `IMAGE=${params.IMAGE}`
+        )
+        .replace(
           /CHROMIUM_VERSION=[\d\w._\/-]+/,
           `CHROMIUM_VERSION=${params.CHROMIUM_VERSION}`
         )

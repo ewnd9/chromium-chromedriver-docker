@@ -40,6 +40,8 @@ async function main() {
   const { stdout: containerId } = await exec('docker run -d -p 9515:9515 test');
   console.log({ containerId });
 
+  await new Promise(resolve => setTimeout(resolve, 1000));
+
   try {
     const text = await runTest();
     console.log({ text });

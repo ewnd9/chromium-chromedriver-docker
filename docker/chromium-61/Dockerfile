@@ -5,6 +5,7 @@ FROM ${IMAGE}
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y wget unzip gdebi-core xvfb
+RUN apt-get install -y libgconf2-4
 
 ARG CHROMIUM_VERSION=339989000/chromium-browser_61.0.3163.100-0ubuntu1.1378_amd64
 ARG CHROMIUM_CODECS_VERSION=339989003/chromium-codecs-ffmpeg-extra_61.0.3163.100-0ubuntu1.1378_amd64

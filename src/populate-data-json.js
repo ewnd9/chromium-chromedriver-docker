@@ -35,12 +35,12 @@ async function main() {
     }
 
     data.versions[`chromium-${majorVersion}`] = {
-      IMAGE: 'ubuntu:18.04',
+      IMAGE: getImage(Number(majorVersion)),
       CHROMIUM_VERSION: version,
       CHROMIUM_CODECS_VERSION: chromiumCodecsVersion,
       CHROMEDRIVER_VERSION: chromedriverVersion,
       userAgent: '',
-      template: 'chromium-87',
+      template: getTemplate(Number(majorVersion)),
     };
   }
 
@@ -119,6 +119,24 @@ async function parseChromedriverVersions() {
   versions['61'] = '2.34';
 
   return versions;
+}
+
+function getImage(majorVersion) {
+  if (majorVersion >= 61) {
+    return 'ubuntu:18.04';
+  } else {
+    throw new Error(`unsupported version "${majorVersion}"`);
+  }
+}
+
+function getTemplate(majorVersion) {
+  if (majorVersion > 61) {
+    return 'chromium-87';
+  } else if (majorVersion === 61) {
+    return 'chromium-61';
+  } else {
+    throw new Error(`unsupported version "${majorVersion}"`);
+  }
 }
 
 async function parseHtml({ url, regex, onMatch }) {

@@ -1,0 +1,37 @@
+{
+  "chromium": {
+    "4": "38424297/chromium-browser_4.0.305.0~svn20100123r36929-0ubuntu1_amd64",
+    "5": "54240257/chromium-browser_5.0.375.127~r55887-0ubuntu0.10.04.1_amd64",
+    "6": "55937941/chromium-browser_6.0.472.62~r59676-0ubuntu0.10.04.1_amd64",
+    "7": "58685433/chromium-browser_7.0.517.44~r64615-0ubuntu0.10.04.1_amd64",
+    "8": "62201451/chromium-browser_8.0.552.237~r70801-0ubuntu0.10.04.1_amd64",
+    "9": "65411565/chromium-browser_9.0.597.107~r75357-0ubuntu0.10.04.1_amd64",
+    "10": "69838054/chromium-browser_10.0.648.205~r81283-0ubuntu0.10.04.1_amd64",
+    "11": "72436596/chromium-browser_11.0.696.71~r86024-0ubuntu0.10.04.1_amd64",
+    "12": "74301896/chromium-browser_12.0.742.112~r90304-0ubuntu0.10.04.1_amd64",
+    "13": "78211438/chromium-browser_13.0.782.215~r97094-0ubuntu0.10.04.1_amd64",
+    "14": "82592640/chromium-browser_14.0.835.202~r103287-0ubuntu0.10.04.2_amd64",
+    "15": "83803885/chromium-browser_15.0.874.106~r107270-0ubuntu0.10.04.1_amd64",
+    "16": "91432925/chromium-browser_16.0.912.77~r118311-0ubuntu0.10.04.1_amd64",
+    "17": "97836846/chromium-browser_17.0.963.83~r127885-0ubuntu0.10.04.1_amd64",
+    "18": "103706834/chromium-browser_18.0.1025.168~r134367-0ubuntu0.10.04.1_amd64",
+    "23": "128319222/chromium-browser_23.0.1271.97-0ubuntu0.10.04.1_amd64",
+    "24": "129803421/chromium-browser_24.0.1312.56-0ubuntu0.10.04.1_amd64",
+    "25": "133539691/chromium-browser_25.0.1364.160-0ubuntu0.10.04.1_amd64"
+  },
+  "chromiumCodecs": {
+    "9": "65411576/chromium-codecs-ffmpeg-extra_9.0.597.107~r75357-0ubuntu0.10.04.1_amd64",
+    "10": "69838124/chromium-codecs-ffmpeg-extra_10.0.648.205~r81283-0ubuntu0.10.04.1_amd64",
+    "11": "72436602/chromium-codecs-ffmpeg-extra_11.0.696.71~r86024-0ubuntu0.10.04.1_amd64",
+    "12": "74301910/chromium-codecs-ffmpeg-extra_12.0.742.112~r90304-0ubuntu0.10.04.1_amd64",
+    "13": "78211443/chromium-codecs-ffmpeg-extra_13.0.782.215~r97094-0ubuntu0.10.04.1_amd64",
+    "14": "82592657/chromium-codecs-ffmpeg-extra_14.0.835.202~r103287-0ubuntu0.10.04.2_amd64",
+    "15": "83803897/chromium-codecs-ffmpeg-extra_15.0.874.106~r107270-0ubuntu0.10.04.1_amd64",
+    "16": "91432972/chromium-codecs-ffmpeg-extra_16.0.912.77~r118311-0ubuntu0.10.04.1_amd64",
+    "17": "97836854/chromium-codecs-ffmpeg-extra_17.0.963.83~r127885-0ubuntu0.10.04.1_amd64",
+    "18": "103706839/chromium-codecs-ffmpeg-extra_18.0.1025.168~r134367-0ubuntu0.10.04.1_amd64",
+    "23": "128319226/chromium-codecs-ffmpeg-extra_23.0.1271.97-0ubuntu0.10.04.1_amd64",
+    "24": "129803425/chromium-codecs-ffmpeg-extra_24.0.1312.56-0ubuntu0.10.04.1_amd64",
+    "25": "133539696/chromium-codecs-ffmpeg-extra_25.0.1364.160-0ubuntu0.10.04.1_amd64"
+  }
+}

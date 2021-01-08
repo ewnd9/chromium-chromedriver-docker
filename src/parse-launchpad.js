@@ -44,7 +44,7 @@ async function parseChromiumVersions({ release }) {
   await parseHtml({
     url,
     regex: new RegExp(
-      `href="/ubuntu/${release}/amd64/chromium-browser/([\\d\\w./-]+)"`,
+      `href="/ubuntu/${release}/amd64/chromium-browser/([\\d\\w~./-]+)"`,
       'g'
     ),
     async onMatch(version) {
@@ -52,7 +52,7 @@ async function parseChromiumVersions({ release }) {
 
       if (!versions[majorVersion]) {
         const { data: html } = await axios(`${url}/${version}`);
-        const regex = /href="http:\/\/launchpadlibrarian.net\/([\d\w.\/_-]+)\.deb"/g;
+        const regex = /href="http:\/\/launchpadlibrarian.net\/([\d\w~.\/_-]+)\.deb"/g;
         const match = regex.exec(html);
         versions[majorVersion] = match[1];
       }
@@ -69,7 +69,7 @@ async function parseChromiumCodecsVersions({ release }) {
   await parseHtml({
     url,
     regex: new RegExp(
-      `href="/ubuntu/${release}/amd64/chromium-codecs-ffmpeg-extra/([\\d\\w./-]+)"`,
+      `href="/ubuntu/${release}/amd64/chromium-codecs-ffmpeg-extra/([\\d\\w~./-]+)"`,
       'g'
     ),
     async onMatch(version) {
@@ -77,7 +77,7 @@ async function parseChromiumCodecsVersions({ release }) {
 
       if (!versions[majorVersion]) {
         const { data: html } = await axios(`${url}/${version}`);
-        const regex = /href="http:\/\/launchpadlibrarian.net\/([\d\w.\/_-]+)\.deb"/g;
+        const regex = /href="http:\/\/launchpadlibrarian.net\/([\d\w~.\/_-]+)\.deb"/g;
         const match = regex.exec(html);
         versions[majorVersion] = match[1];
       }

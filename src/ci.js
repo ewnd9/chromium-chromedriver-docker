@@ -20,13 +20,15 @@ async function main() {
     console.log({ input, image });
 
     const isExists = await dockerIsImageExists(image);
+    console.log({ isExists });
     if (isExists) {
       continue;
     }
 
     const isSuccess = await run({ input, image });
+    console.log({ isSuccess });
 
-    if (isSuccess) {
+    if (isSuccess && process.env.GITHUB_REF === 'refs/heads/master') {
       await execa(`docker push ${image}`, { shell: true, stdio: 'inherit' });
     }
   }

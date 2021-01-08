@@ -16,8 +16,23 @@ main().catch((err) => {
 });
 
 async function main() {
-  const data = require('../data.json');
   const input = process.argv[2];
+  const useDocker = input !== 'existing';
+
+  async function fn() {
+    const text = await runTest();
+    console.log({ text });
+  }
+
+  if (useDocker) {
+    await runWithDocker(fn, input);
+  } else {
+    await fn();
+  }
+}
+
+async function runWithDocker(fn, input) {
+  const data = require('../data.json');
   const result = Object.entries(data.versions).find(
     ([version]) => version === input
   );
@@ -27,8 +42,7 @@ async function main() {
     process.exit(1);
   }
 
-  const [version] = result;
-  const cwd = `docker/${version}`;
+  const cwd = `docker/${result[0]}`;
   const exec = async (cmd) =>
     execa(cmd, {
       shell: true,
@@ -38,13 +52,13 @@ async function main() {
   await exec('docker build -t test .');
 
   const { stdout: containerId } = await exec('docker run -d -p 9515:9515 test');
+
   console.log({ containerId });
 
-  await new Promise(resolve => setTimeout(resolve, 1000));
+  await new Promise((resolve) => setTimeout(resolve, 1000));
 
   try {
-    const text = await runTest();
-    console.log({ text });
+    await fn();
   } catch (err) {
     console.log(err);
   }

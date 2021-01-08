@@ -40,8 +40,12 @@ async function main() {
   const { stdout: containerId } = await exec('docker run -d -p 9515:9515 test');
   console.log({ containerId });
 
-  const text = await runTest();
-  console.log({ text });
+  try {
+    const text = await runTest();
+    console.log({ text });
+  } catch (err) {
+    console.log(err);
+  }
 
   await exec(`docker stop ${containerId} && docker rm ${containerId}`);
 }

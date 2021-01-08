@@ -59,9 +59,7 @@ async function parseChromiumVersions() {
       const majorVersion = version.split('.')[0];
 
       if (!versions[majorVersion]) {
-        const { data: html } = await axios(
-          `${url}/${version}`
-        );
+        const { data: html } = await axios(`${url}/${version}`);
         const regex = /href="http:\/\/launchpadlibrarian.net\/([\d\w.\/_-]+)\.deb"/g;
         const match = regex.exec(html);
         versions[majorVersion] = match[1];
@@ -74,7 +72,8 @@ async function parseChromiumVersions() {
 
 async function parseChromiumCodecsVersions() {
   const versions = {};
-  const url = 'https://launchpad.net/ubuntu/bionic/amd64/chromium-codecs-ffmpeg-extra';
+  const url =
+    'https://launchpad.net/ubuntu/bionic/amd64/chromium-codecs-ffmpeg-extra';
 
   await parseHtml({
     url,
@@ -83,9 +82,7 @@ async function parseChromiumCodecsVersions() {
       const majorVersion = version.split('.')[0];
 
       if (!versions[majorVersion]) {
-        const { data: html } = await axios(
-          `${url}/${version}`
-        );
+        const { data: html } = await axios(`${url}/${version}`);
         const regex = /href="http:\/\/launchpadlibrarian.net\/([\d\w.\/_-]+)\.deb"/g;
         const match = regex.exec(html);
         versions[majorVersion] = match[1];
@@ -110,6 +107,16 @@ async function parseChromedriverVersions() {
       }
     },
   });
+
+  versions['69'] = '2.44';
+  versions['68'] = '2.42';
+  versions['67'] = '2.41';
+  versions['66'] = '2.40';
+  versions['65'] = '2.38';
+  versions['64'] = '2.37';
+  versions['63'] = '2.36';
+  versions['62'] = '2.35';
+  versions['61'] = '2.34';
 
   return versions;
 }

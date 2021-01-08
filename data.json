@@ -164,7 +164,7 @@
       "IMAGE": "ubuntu:18.04",
       "CHROMIUM_VERSION": "371321334/chromium-browser_66.0.3359.181-0ubuntu0.18.04.1_amd64",
       "CHROMIUM_CODECS_VERSION": "371321336/chromium-codecs-ffmpeg-extra_66.0.3359.181-0ubuntu0.18.04.1_amd64",
-      "CHROMEDRIVER_VERSION": "2.40",
+      "CHROMEDRIVER_VERSION": "2.39",
       "userAgent": "",
       "template": "chromium-87"
     },

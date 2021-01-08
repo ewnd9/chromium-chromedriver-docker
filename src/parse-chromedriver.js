@@ -1,7 +1,5 @@
 'use strict';
 
-const axios = require('axios');
-
 const fs = require('fs');
 const path = require('path');
 const { parseHtml } = require('./parse-html');
@@ -38,7 +36,7 @@ async function parseChromedriverVersions() {
   versions['69'] = '2.44';
   versions['68'] = '2.42';
   versions['67'] = '2.41';
-  versions['66'] = '2.40';
+  versions['66'] = '2.39'; // doesn't start with 2.40 (https://github.com/ewnd9/chromium-chromedriver-docker/issues/4)
   versions['65'] = '2.38';
   versions['64'] = '2.37';
   versions['63'] = '2.36';

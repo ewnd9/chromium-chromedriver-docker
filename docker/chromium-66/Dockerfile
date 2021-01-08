@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y wget unzip gdebi-core xvfb
 
 ARG CHROMIUM_VERSION=371321334/chromium-browser_66.0.3359.181-0ubuntu0.18.04.1_amd64
 ARG CHROMIUM_CODECS_VERSION=371321336/chromium-codecs-ffmpeg-extra_66.0.3359.181-0ubuntu0.18.04.1_amd64
-ARG CHROMEDRIVER_VERSION=2.40
+ARG CHROMEDRIVER_VERSION=2.39
 
 RUN wget -q --continue -O chrome-codecs.deb "http://launchpadlibrarian.net/${CHROMIUM_CODECS_VERSION}.deb" \
   && wget -q --continue -O chrome.deb "http://launchpadlibrarian.net/${CHROMIUM_VERSION}.deb" \

@@ -13,11 +13,12 @@ main().catch((err) => {
 });
 
 async function main() {
-  const chromiumVersions = await parseChromiumVersions();
+  const chromiumVersions = await parseChromiumVersions({ release: 'bionic' });
   console.log(chromiumVersions);
 
-  const chromiumCodecsVersions = await parseChromiumCodecsVersions();
-  console.log(chromiumCodecsVersions);
+  const chromiumCodecsVersions = await parseChromiumCodecsVersions({
+    release: 'bionic',
+  });
 
   const chromedriverVersions = await parseChromedriverVersions();
   console.log(chromedriverVersions);
@@ -48,13 +49,16 @@ async function main() {
   console.log(data);
 }
 
-async function parseChromiumVersions() {
+async function parseChromiumVersions({ release }) {
   const versions = {};
-  const url = 'https://launchpad.net/ubuntu/bionic/amd64/chromium-browser';
+  const url = `https://launchpad.net/ubuntu/${release}/amd64/chromium-browser`;
 
   await parseHtml({
     url,
-    regex: /href="\/ubuntu\/bionic\/amd64\/chromium-browser\/([\d\w.\/-]+)"/g,
+    regex: new RegExp(
+      `href="/ubuntu/${release}/amd64/chromium-browser/([\\d\\w./-]+)"`,
+      'g'
+    ),
     async onMatch(version) {
       const majorVersion = version.split('.')[0];
 
@@ -70,14 +74,16 @@ async function parseChromiumVersions() {
   return versions;
 }
 
-async function parseChromiumCodecsVersions() {
+async function parseChromiumCodecsVersions({ release }) {
   const versions = {};
-  const url =
-    'https://launchpad.net/ubuntu/bionic/amd64/chromium-codecs-ffmpeg-extra';
+  const url = `https://launchpad.net/ubuntu/${release}/amd64/chromium-codecs-ffmpeg-extra`;
 
   await parseHtml({
     url,
-    regex: /href="\/ubuntu\/bionic\/amd64\/chromium-codecs-ffmpeg-extra\/([\d\w.\/-]+)"/g,
+    regex: new RegExp(
+      `href="/ubuntu/${release}/amd64/chromium-codecs-ffmpeg-extra/([\\d\\w./-]+)"`,
+      'g'
+    ),
     async onMatch(version) {
       const majorVersion = version.split('.')[0];
 

@@ -89,9 +89,9 @@ async function runTest() {
   // @TODO: use wait in webdriverio
   // await new Promise((resolve) => setTimeout(resolve, 10000));
   await browser.saveScreenshot('sc3.png');
-  const text = await browser.execute(
-    () => document.querySelector('#version').innerText
-  );
+  const text = await browser.execute(function () {
+    return document.querySelector('#version').innerText;
+  });
   await browser.deleteSession();
 
   return text;

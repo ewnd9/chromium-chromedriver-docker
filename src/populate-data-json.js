@@ -44,6 +44,24 @@ async function main() {
     },
     {
       from: 45, // 46 is missing in launchpad
+      to: 43,
+      image: 'ubuntu:14.04',
+      template: 'chromium-45',
+      chromeVersions: require('../data-launchpad-trusty.json').chromium,
+      chromeCodecsVersion: require('../data-launchpad-trusty.json')
+        .chromiumCodecs,
+    },
+    {
+      from: 42,
+      to: 42,
+      image: 'ubuntu:14.04',
+      template: 'chromium-45',
+      chromeVersions: require('../data-launchpad-wily.json').chromium, // 15.10
+      chromeCodecsVersion: require('../data-launchpad-wily.json')
+        .chromiumCodecs,
+    },
+    {
+      from: 41,
       to: 36,
       image: 'ubuntu:14.04',
       template: 'chromium-45',
@@ -56,7 +74,7 @@ async function main() {
       to: 35,
       image: 'ubuntu:14.04',
       template: 'chromium-45',
-      chromeVersions: require('../data-launchpad-utopic.json').chromium,
+      chromeVersions: require('../data-launchpad-utopic.json').chromium, // 14.10
       chromeCodecsVersion: require('../data-launchpad-utopic.json')
         .chromiumCodecs,
     },
@@ -78,6 +96,7 @@ async function main() {
       majorVersion--
     ) {
       if (!range.chromeVersions[majorVersion]) {
+        console.log(`missing ${majorVersion}`);
         continue;
       }
 

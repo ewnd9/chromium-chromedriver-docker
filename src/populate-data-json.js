@@ -13,36 +13,68 @@ main().catch((err) => {
 });
 
 async function main() {
-  const chromiumVersions = await parseChromiumVersions({ release: 'bionic' });
-  console.log(chromiumVersions);
-
-  const chromiumCodecsVersions = await parseChromiumCodecsVersions({
+  const bionicChromiumVersions = await parseChromiumVersions({
     release: 'bionic',
+  });
+  const bionicChromiumCodecsVersions = await parseChromiumCodecsVersions({
+    release: 'bionic',
+  });
+  const xenialChromiumVersions = await parseChromiumVersions({
+    release: 'xenial',
+  });
+  const xenialChromiumCodecsVersions = await parseChromiumCodecsVersions({
+    release: 'xenial',
   });
 
   const chromedriverVersions = await parseChromedriverVersions();
-  console.log(chromedriverVersions);
 
   const data = require(dataPath);
+  const ranges = [
+    {
+      from: 87,
+      to: 62,
+      image: 'ubuntu:18.04',
+      template: 'chromium-87',
+      chromeVersions: bionicChromiumVersions,
+      chromeCodecsVersion: bionicChromiumCodecsVersions,
+    },
+    {
+      from: 61,
+      to: 61,
+      image: 'ubuntu:18.04',
+      template: 'chromium-61',
+      chromeVersions: bionicChromiumVersions,
+      chromeCodecsVersion: bionicChromiumCodecsVersions,
+    },
+    {
+      from: 60,
+      to: 45,
+      image: 'ubuntu:16.04',
+      template: 'chromium-61',
+      chromeVersions: xenialChromiumVersions,
+      chromeCodecsVersion: xenialChromiumCodecsVersions,
+    },
+  ];
 
-  for (const [majorVersion, version] of Object.entries(
-    chromiumVersions
-  ).reverse()) {
-    const chromedriverVersion = chromedriverVersions[majorVersion];
-    const chromiumCodecsVersion = chromiumCodecsVersions[majorVersion];
+  for (const range of ranges) {
+    for (
+      let majorVersion = range.from;
+      majorVersion >= range.to;
+      majorVersion--
+    ) {
+      if (!range.chromeVersions[majorVersion]) {
+        continue;
+      }
 
-    if (!chromedriverVersion || !chromiumCodecsVersion) {
-      break;
+      data.versions[`chromium-${majorVersion}`] = {
+        IMAGE: range.image,
+        CHROMIUM_VERSION: range.chromeVersions[majorVersion],
+        CHROMIUM_CODECS_VERSION: range.chromeCodecsVersion[majorVersion],
+        CHROMEDRIVER_VERSION: chromedriverVersions[majorVersion],
+        userAgent: '',
+        template: range.template,
+      };
     }
-
-    data.versions[`chromium-${majorVersion}`] = {
-      IMAGE: getImage(Number(majorVersion)),
-      CHROMIUM_VERSION: version,
-      CHROMIUM_CODECS_VERSION: chromiumCodecsVersion,
-      CHROMEDRIVER_VERSION: chromedriverVersion,
-      userAgent: '',
-      template: getTemplate(Number(majorVersion)),
-    };
   }
 
   fs.writeFileSync(dataPath, JSON.stringify(data, null, 2) + '\n');
@@ -123,26 +155,24 @@ async function parseChromedriverVersions() {
   versions['63'] = '2.36';
   versions['62'] = '2.35';
   versions['61'] = '2.34';
+  versions['60'] = '2.33';
+  versions['59'] = '2.32';
+  versions['58'] = '2.31';
+  versions['57'] = '2.29';
+  versions['56'] = '2.29';
+  versions['55'] = '2.28';
+  versions['54'] = '2.27';
+  versions['53'] = '2.26';
+  versions['52'] = '2.24';
+  versions['51'] = '2.23';
+  versions['50'] = '2.22';
+  versions['49'] = '2.22';
+  versions['48'] = '2.21';
+  versions['47'] = '2.21';
+  versions['46'] = '2.21';
+  versions['45'] = '2.20';
 
   return versions;
-}
-
-function getImage(majorVersion) {
-  if (majorVersion >= 61) {
-    return 'ubuntu:18.04';
-  } else {
-    throw new Error(`unsupported version "${majorVersion}"`);
-  }
-}
-
-function getTemplate(majorVersion) {
-  if (majorVersion > 61) {
-    return 'chromium-87';
-  } else if (majorVersion === 61) {
-    return 'chromium-61';
-  } else {
-    throw new Error(`unsupported version "${majorVersion}"`);
-  }
 }
 
 async function parseHtml({ url, regex, onMatch }) {

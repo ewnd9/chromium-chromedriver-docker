@@ -74,6 +74,10 @@ async function runWithDocker(fn, input, image) {
 }
 
 async function runTest() {
+  const chromeOptions = {
+    args: ['--no-sandbox'],
+  };
+
   const browser = await remote({
     logLevel: LOG_LEVEL,
     hostname: CHROMEDRIVER_HOST,
@@ -82,9 +86,8 @@ async function runTest() {
     connectionRetryTimeout: 10000,
     capabilities: {
       browserName: 'chrome',
-      'goog:chromeOptions': {
-        args: ['--no-sandbox'],
-      },
+      chromeOptions, // chromeOptions only required for chromium 56 and 57 for some reason
+      'goog:chromeOptions': chromeOptions,
     },
   });
 

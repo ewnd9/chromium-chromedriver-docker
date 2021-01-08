@@ -384,6 +384,14 @@
       "userAgent": "",
       "template": "chromium-45"
     },
+    "chromium-35": {
+      "IMAGE": "ubuntu:14.04",
+      "CHROMIUM_VERSION": "180526741/chromium-browser_35.0.1916.153-0ubuntu1~pkg1029_amd64",
+      "CHROMIUM_CODECS_VERSION": "180526746/chromium-codecs-ffmpeg-extra_35.0.1916.153-0ubuntu1~pkg1029_amd64",
+      "CHROMEDRIVER_VERSION": "2.10",
+      "userAgent": "",
+      "template": "chromium-45"
+    },
     "chromium-34": {
       "IMAGE": "ubuntu:14.04",
       "CHROMIUM_VERSION": "172813637/chromium-browser_34.0.1847.116-0ubuntu2_amd64",

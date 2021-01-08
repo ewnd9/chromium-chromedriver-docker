@@ -44,6 +44,24 @@ async function main() {
     },
     {
       from: 45, // 46 is missing in launchpad
+      to: 36,
+      image: 'ubuntu:14.04',
+      template: 'chromium-45',
+      chromeVersions: require('../data-launchpad-trusty.json').chromium,
+      chromeCodecsVersion: require('../data-launchpad-trusty.json')
+        .chromiumCodecs,
+    },
+    {
+      from: 35,
+      to: 35,
+      image: 'ubuntu:14.04',
+      template: 'chromium-45',
+      chromeVersions: require('../data-launchpad-utopic.json').chromium,
+      chromeCodecsVersion: require('../data-launchpad-utopic.json')
+        .chromiumCodecs,
+    },
+    {
+      from: 34,
       to: 29,
       image: 'ubuntu:14.04',
       template: 'chromium-45',

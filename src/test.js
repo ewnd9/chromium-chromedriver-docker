@@ -51,7 +51,11 @@ async function runWithDocker(fn, input) {
 
   await exec('docker build -t test .');
 
-  const { stdout: containerId } = await exec('docker run -d -p 9515:9515 test');
+  // unclear how to run without --privileged (https://github.com/jessfraz/dockerfiles/issues/350)
+  // chrome 60+ doesn't require it
+  const { stdout: containerId } = await exec(
+    'docker run --privileged -d -p 9515:9515 test'
+  );
 
   console.log({ containerId });
 

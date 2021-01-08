@@ -15,6 +15,7 @@ RUN wget -q --continue -O chrome-codecs.deb "http://launchpadlibrarian.net/${CHR
   && gdebi --non-interactive chrome-codecs.deb \
   && gdebi --non-interactive chrome.deb
 
+# libnss3.deb trick http://forums.debian.net/viewtopic.php?f=6&t=129904
 RUN wget -q --continue -O libnss3.deb "http://launchpadlibrarian.net/194157262/libnss3_3.17.2-1.1ubuntu1_amd64.deb" \
   && dpkg-deb -R libnss3.deb libnss3-deb \
   && sed -i s~export\ LD_LIBRARY_PATH~export\ LD_LIBRARY_PATH=/libnss3-deb/usr/lib/x86_64-linux-gnu/:/libnss3-deb/usr/lib/x86_64-linux-gnu/nss/~ /usr/bin/chromium-browser

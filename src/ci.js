@@ -61,7 +61,6 @@ async function dockerIsImageExists(image) {
   try {
     await execa(`docker manifest inspect ${image}`, {
       shell: true,
-      stdio: 'inherit',
     });
     return true;
   } catch (err) {

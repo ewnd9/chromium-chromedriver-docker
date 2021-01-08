@@ -20,4 +20,5 @@ $ node ./src/test chromium-${VERSION} # see data.json
 - https://launchpad.net/ubuntu/lucid/amd64/chromium-browser (Ubuntu 10.04)
 - https://launchpad.net/ubuntu/lucid/amd64/chromium-codecs-ffmpeg-extra (Ubuntu 10.04)
 - https://chromedriver.chromium.org/downloads
+- https://chromedriver.storage.googleapis.com/index.html
 - https://chromedriver.storage.googleapis.com/2.42/notes.txt

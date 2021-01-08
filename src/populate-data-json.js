@@ -35,11 +35,20 @@ async function main() {
     },
     {
       from: 60,
-      to: 45,
+      to: 47,
       image: 'ubuntu:16.04',
       template: 'chromium-61',
       chromeVersions: require('../data-launchpad-xenial.json').chromium,
       chromeCodecsVersion: require('../data-launchpad-xenial.json')
+        .chromiumCodecs,
+    },
+    {
+      from: 45, // 46 is missing in launchpad
+      to: 29,
+      image: 'ubuntu:14.04',
+      template: 'chromium-45',
+      chromeVersions: require('../data-launchpad-trusty.json').chromium,
+      chromeCodecsVersion: require('../data-launchpad-trusty.json')
         .chromiumCodecs,
     },
   ];

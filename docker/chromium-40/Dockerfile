@@ -1,4 +1,4 @@
-ARG IMAGE=ubuntu:16.04
+ARG IMAGE=ubuntu:14.04
 
 FROM ${IMAGE}
 
@@ -6,9 +6,9 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y wget unzip gdebi-core xvfb
 
-ARG CHROMIUM_VERSION=219184439/chromium-browser_45.0.2454.101-0ubuntu1.1201_amd64
-ARG CHROMIUM_CODECS_VERSION=219184445/chromium-codecs-ffmpeg-extra_45.0.2454.101-0ubuntu1.1201_amd64
-ARG CHROMEDRIVER_VERSION=2.20
+ARG CHROMIUM_VERSION=196829846/chromium-browser_40.0.2214.111-0ubuntu0.14.04.1.1069_amd64
+ARG CHROMIUM_CODECS_VERSION=196829860/chromium-codecs-ffmpeg-extra_40.0.2214.111-0ubuntu0.14.04.1.1069_amd64
+ARG CHROMEDRIVER_VERSION=2.15
 
 RUN wget -q --continue -O chrome-codecs.deb "http://launchpadlibrarian.net/${CHROMIUM_CODECS_VERSION}.deb" \
   && wget -q --continue -O chrome.deb "http://launchpadlibrarian.net/${CHROMIUM_VERSION}.deb" \

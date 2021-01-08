@@ -60,6 +60,22 @@ async function parseChromedriverVersions() {
   versions['47'] = '2.21';
   versions['46'] = '2.21';
   versions['45'] = '2.20';
+  versions['44'] = '2.20';
+  versions['43'] = '2.20';
+  versions['42'] = '2.16';
+  versions['41'] = '2.15';
+  versions['40'] = '2.15';
+  versions['39'] = '2.14';
+  versions['38'] = '2.13';
+  versions['37'] = '2.12';
+  versions['36'] = '2.12';
+  versions['35'] = '2.10';
+  versions['34'] = '2.10';
+  versions['33'] = '2.10';
+  versions['32'] = '2.9';
+  versions['31'] = '2.9';
+  versions['30'] = '2.8';
+  versions['29'] = '2.6';
 
   return versions;
 }

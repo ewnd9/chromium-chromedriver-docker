@@ -1,0 +1,18 @@
+# https://docs.github.com/en/free-pro-team@latest/actions/quickstart
+name: builder
+on: push
+jobs:
+  builder:
+    name: builder
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - uses: docker-practice/actions-setup-docker@master
+      - run: yarn install
+      - run: node src/ci
+        env:
+          DOCKER_REGISTRY_USERNAME: ${{ github.actor }}
+          DOCKER_REGISTRY_PASSWORD: ${{ secrets.PAT }}
+          DOCKER_REGISTRY_IMAGE: ghcr.io/ewnd9/chromium-chromedriver-docker

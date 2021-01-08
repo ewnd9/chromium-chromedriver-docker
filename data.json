@@ -1,0 +1,10 @@
+{
+  "versions": {
+    "chromium-87": {
+      "IMAGE": "ubuntu:18.04",
+      "CHROMIUM_VERSION": "507633598/chromium-browser_87.0.4280.66-0ubuntu0.18.04.1_amd64.deb",
+      "CHROMEDRIVER_VERSION": "87.0.4280.88",
+      "userAgent": "87.0.4280.66 (Official Build) Built on Ubuntu , running on Ubuntu 18.04 (64-bit)"
+    }
+  }
+}

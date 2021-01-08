@@ -1,0 +1,10 @@
+{
+  "name": "chromium-chromedriver-docker",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.21.1",
+    "execa": "^5.0.0",
+    "webdriverio": "^6.11.3"
+  }
+}
